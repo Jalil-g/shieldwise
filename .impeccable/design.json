@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T00:00:00Z",
+  "title": "Design System: ShieldWise",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(92.6% 0.02 85)",
+        "tonalRamp": [
+          "oklch(15% 0.009 85)",
+          "oklch(25% 0.009 85)",
+          "oklch(35% 0.02 85)",
+          "oklch(45% 0.02 85)",
+          "oklch(55% 0.02 85)",
+          "oklch(70% 0.02 85)",
+          "oklch(85% 0.02 85)",
+          "oklch(95% 0.009 85)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card Cream",
+        "canonical": "oklch(97.2% 0.015 88)",
+        "tonalRamp": [
+          "oklch(15% 0.007 88)",
+          "oklch(25% 0.007 88)",
+          "oklch(35% 0.015 88)",
+          "oklch(45% 0.015 88)",
+          "oklch(55% 0.015 88)",
+          "oklch(70% 0.015 88)",
+          "oklch(85% 0.015 88)",
+          "oklch(95% 0.007 88)"
+        ]
+      },
+      "well": {
+        "role": "neutral",
+        "displayName": "Well Cream",
+        "canonical": "oklch(94.6% 0.02 88)",
+        "tonalRamp": [
+          "oklch(15% 0.009 88)",
+          "oklch(25% 0.009 88)",
+          "oklch(35% 0.02 88)",
+          "oklch(45% 0.02 88)",
+          "oklch(55% 0.02 88)",
+          "oklch(70% 0.02 88)",
+          "oklch(85% 0.02 88)",
+          "oklch(95% 0.009 88)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(19% 0.01 85)",
+        "tonalRamp": [
+          "oklch(15% 0.005 85)",
+          "oklch(25% 0.005 85)",
+          "oklch(35% 0.01 85)",
+          "oklch(45% 0.01 85)",
+          "oklch(55% 0.01 85)",
+          "oklch(70% 0.01 85)",
+          "oklch(85% 0.01 85)",
+          "oklch(95% 0.005 85)"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "oklch(47% 0.02 85)",
+        "tonalRamp": [
+          "oklch(15% 0.009 85)",
+          "oklch(25% 0.009 85)",
+          "oklch(35% 0.02 85)",
+          "oklch(45% 0.02 85)",
+          "oklch(55% 0.02 85)",
+          "oklch(70% 0.02 85)",
+          "oklch(85% 0.02 85)",
+          "oklch(95% 0.009 85)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(22, 20, 15, 0.14)",
+        "tonalRamp": [
+          "oklch(15% 0.005 85)",
+          "oklch(25% 0.005 85)",
+          "oklch(35% 0.01 85)",
+          "oklch(45% 0.01 85)",
+          "oklch(55% 0.01 85)",
+          "oklch(70% 0.01 85)",
+          "oklch(85% 0.01 85)",
+          "oklch(95% 0.005 85)"
+        ]
+      },
+      "track": {
+        "role": "neutral",
+        "displayName": "Track",
+        "canonical": "oklch(89.5% 0.03 88)",
+        "tonalRamp": [
+          "oklch(15% 0.013 88)",
+          "oklch(25% 0.013 88)",
+          "oklch(35% 0.03 88)",
+          "oklch(45% 0.03 88)",
+          "oklch(55% 0.03 88)",
+          "oklch(70% 0.03 88)",
+          "oklch(85% 0.03 88)",
+          "oklch(95% 0.013 88)"
+        ]
+      },
+      "sidebar-black": {
+        "role": "neutral",
+        "displayName": "Sidebar Black",
+        "canonical": "oklch(16% 0.008 90)",
+        "tonalRamp": [
+          "oklch(15% 0.004 90)",
+          "oklch(25% 0.004 90)",
+          "oklch(35% 0.008 90)",
+          "oklch(45% 0.008 90)",
+          "oklch(55% 0.008 90)",
+          "oklch(70% 0.008 90)",
+          "oklch(85% 0.008 90)",
+          "oklch(95% 0.004 90)"
+        ]
+      },
+      "sidebar-text": {
+        "role": "neutral",
+        "displayName": "Sidebar Text",
+        "canonical": "oklch(83% 0.02 88)",
+        "tonalRamp": [
+          "oklch(15% 0.009 88)",
+          "oklch(25% 0.009 88)",
+          "oklch(35% 0.02 88)",
+          "oklch(45% 0.02 88)",
+          "oklch(55% 0.02 88)",
+          "oklch(70% 0.02 88)",
+          "oklch(85% 0.02 88)",
+          "oklch(95% 0.009 88)"
+        ]
+      },
+      "electric-blue": {
+        "role": "primary",
+        "displayName": "Electric Blue",
+        "canonical": "oklch(53% 0.24 270)",
+        "tonalRamp": [
+          "oklch(15% 0.09 270)",
+          "oklch(25% 0.09 270)",
+          "oklch(35% 0.2 270)",
+          "oklch(45% 0.2 270)",
+          "oklch(55% 0.2 270)",
+          "oklch(70% 0.2 270)",
+          "oklch(85% 0.2 270)",
+          "oklch(95% 0.09 270)"
+        ]
+      },
+      "blue-ink": {
+        "role": "primary",
+        "displayName": "Blue Ink",
+        "canonical": "oklch(42% 0.21 271)",
+        "tonalRamp": [
+          "oklch(15% 0.081 271)",
+          "oklch(25% 0.081 271)",
+          "oklch(35% 0.18 271)",
+          "oklch(45% 0.18 271)",
+          "oklch(55% 0.18 271)",
+          "oklch(70% 0.18 271)",
+          "oklch(85% 0.18 271)",
+          "oklch(95% 0.081 271)"
+        ]
+      },
+      "highlighter-yellow": {
+        "role": "secondary",
+        "displayName": "Highlighter Yellow",
+        "canonical": "oklch(89% 0.14 95)",
+        "tonalRamp": [
+          "oklch(15% 0.059 95)",
+          "oklch(25% 0.059 95)",
+          "oklch(35% 0.13 95)",
+          "oklch(45% 0.13 95)",
+          "oklch(55% 0.13 95)",
+          "oklch(70% 0.13 95)",
+          "oklch(85% 0.13 95)",
+          "oklch(95% 0.059 95)"
+        ]
+      },
+      "alert-orange": {
+        "role": "secondary",
+        "displayName": "Alert Orange",
+        "canonical": "oklch(67% 0.19 42)",
+        "tonalRamp": [
+          "oklch(15% 0.077 42)",
+          "oklch(25% 0.077 42)",
+          "oklch(35% 0.17 42)",
+          "oklch(45% 0.17 42)",
+          "oklch(55% 0.17 42)",
+          "oklch(70% 0.17 42)",
+          "oklch(85% 0.17 42)",
+          "oklch(95% 0.077 42)"
+        ]
+      },
+      "blush-pink": {
+        "role": "tertiary",
+        "displayName": "Blush Pink",
+        "canonical": "oklch(83% 0.08 345)",
+        "tonalRamp": [
+          "oklch(15% 0.036 345)",
+          "oklch(25% 0.036 345)",
+          "oklch(35% 0.08 345)",
+          "oklch(45% 0.08 345)",
+          "oklch(55% 0.08 345)",
+          "oklch(70% 0.08 345)",
+          "oklch(85% 0.08 345)",
+          "oklch(95% 0.036 345)"
+        ]
+      },
+      "periwinkle": {
+        "role": "tertiary",
+        "displayName": "Periwinkle",
+        "canonical": "oklch(83% 0.07 275)",
+        "tonalRamp": [
+          "oklch(15% 0.032 275)",
+          "oklch(25% 0.032 275)",
+          "oklch(35% 0.07 275)",
+          "oklch(45% 0.07 275)",
+          "oklch(55% 0.07 275)",
+          "oklch(70% 0.07 275)",
+          "oklch(85% 0.07 275)",
+          "oklch(95% 0.032 275)"
+        ]
+      },
+      "sage": {
+        "role": "tertiary",
+        "displayName": "Sage",
+        "canonical": "oklch(88% 0.07 140)",
+        "tonalRamp": [
+          "oklch(15% 0.032 140)",
+          "oklch(25% 0.032 140)",
+          "oklch(35% 0.07 140)",
+          "oklch(45% 0.07 140)",
+          "oklch(55% 0.07 140)",
+          "oklch(70% 0.07 140)",
+          "oklch(85% 0.07 140)",
+          "oklch(95% 0.032 140)"
+        ]
+      },
+      "lilac": {
+        "role": "tertiary",
+        "displayName": "Lilac",
+        "canonical": "oklch(85% 0.06 305)",
+        "tonalRamp": [
+          "oklch(15% 0.027 305)",
+          "oklch(25% 0.027 305)",
+          "oklch(35% 0.06 305)",
+          "oklch(45% 0.06 305)",
+          "oklch(55% 0.06 305)",
+          "oklch(70% 0.06 305)",
+          "oklch(85% 0.06 305)",
+          "oklch(95% 0.027 305)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero multiplier only; the × at half size."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page greeting and page titles."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The sentence that explains a hero number."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card headings."
+      },
+      "title-sm": {
+        "displayName": "Title Sm",
+        "purpose": "Sub-headings inside cards."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Driver multipliers, gap amounts, prices, deltas."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 58-70ch max for long reads."
+      },
+      "body-sm": {
+        "displayName": "Body Sm",
+        "purpose": "Card subtitles, list rows, small buttons."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Pill tags, marker tags, fine print. Sentence case."
+      }
+    },
+    "darkMode": {
+      "source": "src/index.css :root[data-theme=dark] and prefers-color-scheme: dark",
+      "paper": "#0c0b08",
+      "card": "#1b1913",
+      "well": "#26231b",
+      "ink": "#f4efe3",
+      "muted-ink": "#b0aa99",
+      "line": "rgba(244, 239, 227, 0.3)",
+      "hairline": "rgba(244, 239, 227, 0.12)",
+      "track": "#312d22",
+      "sidebar-black": "#000000",
+      "electric-blue": "#6b7bff",
+      "blue-ink": "#9aa5ff",
+      "button-primary": "cream fill (#f4efe3) with ink text",
+      "note": "Pastels, yellow and orange do not change; text on them stays #16140f."
+    },
+    "astryxBridge": {
+      "source": "src/index.css :root, [data-astryx-theme]",
+      "--color-accent": "var(--blue)",
+      "--color-background-body": "var(--bg)",
+      "--color-background-surface": "var(--card)",
+      "--color-text-primary": "var(--ink)",
+      "--color-text-secondary": "var(--muted)",
+      "--color-border": "var(--hair)",
+      "--color-border-emphasized": "var(--ink)",
+      "--font-family-body": "var(--body)",
+      "--font-family-heading": "var(--display)",
+      "--radius-container": "22px",
+      "--radius-element": "999px"
+    },
+    "shadows": [
+      {
+        "name": "button-lift",
+        "value": "0 8px 18px -10px rgba(22, 20, 15, 0.6)",
+        "purpose": "Primary and blue button hover."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 18px 30px -24px rgba(22, 20, 15, 0.7)",
+        "purpose": "Policy card hover, with translateY(-3px)."
+      },
+      {
+        "name": "selected-row",
+        "value": "0 10px 24px -18px rgba(22, 20, 15, 0.6)",
+        "purpose": "Selected risk category row."
+      },
+      {
+        "name": "popover",
+        "value": "0 18px 40px -18px rgba(22, 20, 15, 0.35)",
+        "purpose": "Menus and floating layers."
+      }
+    ],
+    "focus": {
+      "value": "outline: 3px solid var(--blue); outline-offset: 2px",
+      "purpose": "Every focusable element and focus-within fields."
+    },
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "All transforms and data transitions."
+      },
+      {
+        "name": "state",
+        "value": "0.2s",
+        "purpose": "Background, border and color changes."
+      },
+      {
+        "name": "press",
+        "value": "transform 0.15s",
+        "purpose": "Button press nudge."
+      },
+      {
+        "name": "data-move",
+        "value": "0.7s-0.9s",
+        "purpose": "Peer markers, coverage fills and divergence bars moving when values change."
+      },
+      {
+        "name": "enter",
+        "value": "fadeUp 0.45s, 8px rise",
+        "purpose": "Page and panel entrance."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all durations 0.01ms",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1240px",
+        "purpose": "4-8 column spans go full width; 3-spans go half."
+      },
+      {
+        "name": "tablet",
+        "value": "960px",
+        "purpose": "Sidebar replaced by mobile bar; padding 12px; tiles stack."
+      },
+      {
+        "name": "phone",
+        "value": "600px",
+        "purpose": "Card padding 18px, radius 24px; persona switch hidden."
+      }
+    ],
+    "layout": {
+      "sidebar": "252px",
+      "outerPadding": "18px (12px under 960px)",
+      "gridColumns": 12,
+      "gridGap": "18px",
+      "maxWidth": "1560px"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink pill for the main action on a surface; may carry a yellow icon circle.",
+      "html": "<button class=\"ds-btn\">Compare before you renew <span class=\"ds-circ\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></button>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-btn{display:inline-flex;align-items:center;gap:10px;background:var(--btn-bg);color:var(--btn-fg);border:1.5px solid var(--btn-bg);border-radius:999px;padding:12px 20px;font:600 15px/1.5 var(--body);cursor:pointer;transition:transform .15s var(--ease),box-shadow .2s}.ds-btn:hover{box-shadow:0 8px 18px -10px rgba(22,20,15,.6)}.ds-btn:active{transform:translateY(1px) scale(.99)}.ds-btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}.ds-circ{width:26px;height:26px;border-radius:50%;background:var(--yellow);color:#16140f;display:grid;place-items:center;margin-right:-8px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outlined secondary action in currentColor.",
+      "html": "<button class=\"ds-btn-ghost\">Not now</button>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-btn-ghost{background:transparent;color:var(--ink);border:1.5px solid currentColor;border-radius:999px;padding:12px 20px;font:600 15px/1.5 var(--body);cursor:pointer;transition:background .2s}.ds-btn-ghost:hover{background:color-mix(in srgb,currentColor 8%,transparent)}.ds-btn-ghost:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}"
+    },
+    {
+      "name": "Blue Button",
+      "kind": "button",
+      "refersTo": "button-blue",
+      "description": "Rare electric-blue commit step at the end of a flow.",
+      "html": "<button class=\"ds-btn-blue\">Save to policy hub</button>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-btn-blue{background:var(--blue);color:#fff;border:1.5px solid var(--blue);border-radius:999px;padding:12px 20px;font:600 15px/1.5 var(--body);cursor:pointer;transition:box-shadow .2s,transform .15s var(--ease)}.ds-btn-blue:hover{box-shadow:0 8px 18px -10px rgba(22,20,15,.6)}.ds-btn-blue:active{transform:translateY(1px) scale(.99)}.ds-btn-blue:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Ink-outlined pill input; focus rings the whole pill in blue.",
+      "html": "<label class=\"ds-field\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"Search a risk, policy or term\" /><span class=\"ds-kbd\">⌘K</span></label>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-field{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:999px;padding:0 10px 0 16px;height:46px;background:var(--card);color:var(--muted);font:15px var(--body)}.ds-field input{flex:1;border:0;background:none;font:inherit;color:var(--ink);outline:none;min-width:0}.ds-field:focus-within{outline:3px solid var(--blue);outline-offset:2px;}.ds-kbd{font-size:12px;font-weight:600;border:1px solid var(--hair);background:var(--inner);border-radius:8px;padding:2px 8px}"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Black spine with pill items; yellow pill marks the current page; orange count.",
+      "html": "<nav class=\"ds-side\"><a href=\"#\" class=\"ds-on\">Overview</a><a href=\"#\">Risk profile</a><a href=\"#\">Coverage <span class=\"ds-count\">3</span></a><a href=\"#\">Learn</a></nav>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-side{background:var(--side);border-radius:30px;padding:14px;display:flex;flex-direction:column;gap:3px;width:240px;font:500 15px var(--body)}.ds-side a{display:flex;align-items:center;padding:10px 14px;border-radius:999px;color:#cfc9ba;text-decoration:none;transition:background .2s,color .2s}.ds-side a:hover{background:rgba(244,239,227,.09);color:#fff}.ds-side a:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}.ds-side a.ds-on{background:var(--yellow);color:#16140f}.ds-count{margin-left:auto;font-size:12px;font-weight:700;min-width:22px;height:22px;padding:0 7px;border-radius:99px;background:var(--orange);color:#16140f;display:grid;place-items:center}"
+    },
+    {
+      "name": "Segmented Switch",
+      "kind": "chip",
+      "refersTo": "segmented-selected",
+      "description": "Ink-outlined pill track; selected segment fills ink.",
+      "html": "<div class=\"ds-seg\" role=\"radiogroup\"><button role=\"radio\" aria-checked=\"true\">SaaS</button><button role=\"radio\" aria-checked=\"false\">Restaurant</button></div>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-seg{display:inline-flex;gap:2px;padding:4px;border:1.5px solid var(--line);border-radius:999px;background:var(--card)}.ds-seg button{border:0;border-radius:999px;padding:0 14px;height:38px;background:none;font:600 14px var(--body);color:var(--muted);cursor:pointer}.ds-seg button:hover{color:var(--ink)}.ds-seg button:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}.ds-seg button[aria-checked=true]{background:var(--ink);color:var(--card)}"
+    },
+    {
+      "name": "Card with Driver Tile",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Cream card, 1.5px ink outline, 28px radius; well tile with pastel icon chip and Bricolage figure.",
+      "html": "<section class=\"ds-card\"><h2>What’s driving it</h2><a href=\"#\" class=\"ds-driver\"><span class=\"ds-chip\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg></span><span class=\"ds-v\">2.3×</span><b>Cyber &amp; data breach</b></a><span class=\"ds-pill\">Well above typical</span></section>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:12px;color:var(--ink);font:15px/1.5 var(--body);max-width:320px}.ds-card h2{margin:0;font:600 24px/1.1 var(--display);letter-spacing:-.02em}.ds-driver{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center;padding:12px;border-radius:var(--r-inner);background:var(--inner);border:1.5px solid transparent;text-decoration:none;color:inherit;transition:border-color .2s}.ds-driver:hover{border-color:var(--line)}.ds-driver:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}.ds-driver b{grid-column:1/-1;font-weight:600;font-size:14px}.ds-chip{width:38px;height:38px;border-radius:14px;background:var(--pink);color:#16140f;display:grid;place-items:center}.ds-v{font:600 26px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}.ds-pill{align-self:flex-start;border-radius:999px;padding:4px 11px;font-size:12.5px;font-weight:600;background:var(--pink);color:#16140f}"
+    },
+    {
+      "name": "Action Field",
+      "kind": "custom",
+      "refersTo": "actions-card",
+      "description": "Electric-blue card of tickable actions with multiplier deltas; ticked circle turns yellow.",
+      "html": "<section class=\"ds-acts\"><h2>Lower your number</h2><button class=\"ds-act\" aria-pressed=\"true\"><span class=\"ds-ck\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span><b>Turn on multi-factor sign-in</b><small>An afternoon · Free</small></span><span class=\"ds-d\">−0.19</span></button><button class=\"ds-act\" aria-pressed=\"false\"><span class=\"ds-ck\"></span><span><b>Test a full restore from backup</b><small>An afternoon · Free</small></span><span class=\"ds-d\">−0.10</span></button></section>",
+      "css": ":host{--bg:#ede6d6;--card:#faf6ec;--inner:#f3eddd;--ink:#16140f;--muted:#625d51;--line:#16140f;--hair:rgba(22,20,15,.14);--track:#e4dbc6;--blue:#3a4df7;--yellow:#f7dc6a;--pink:#f3b6d3;--peri:#bac6f7;--sage:#c4e2b6;--orange:#ef6b2c;--side:#100f0b;--btn-bg:#16140f;--btn-fg:#faf6ec;--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--body:'DM Sans','Helvetica Neue',Arial,sans-serif;--ease:cubic-bezier(.2,.8,.2,1);--r-card:28px;--r-inner:20px}.ds-acts{background:var(--blue);color:#fff;border-radius:var(--r-card);padding:24px;max-width:360px;font:15px/1.5 var(--body)}.ds-acts h2{margin:0 0 12px;font:600 24px/1.1 var(--display);letter-spacing:-.02em}.ds-act{display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:start;padding:14px 0;border:0;border-top:1px solid rgba(255,255,255,.26);background:none;color:inherit;width:100%;text-align:left;font:inherit;cursor:pointer}.ds-act:focus-visible{outline:3px solid #fff;outline-offset:2px}.ds-ck{width:26px;height:26px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;transition:background .2s,transform .2s var(--ease)}.ds-act[aria-pressed=true] .ds-ck{background:var(--yellow);border-color:var(--yellow);color:#16140f;transform:scale(1.06)}.ds-act[aria-pressed=true] b{text-decoration:line-through;opacity:.75}.ds-act b{display:block;font-weight:600;line-height:1.3}.ds-act small{color:rgba(255,255,255,.8);font-size:13px}.ds-d{font:600 18px var(--display);letter-spacing:-.02em}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Marked-Up Ledger",
+    "overview": "ShieldWise reads like a well-kept paper ledger that someone has gone over with a felt pen and a set of highlighters. The ground is warm cream paper; every card and control is drawn with a confident ink outline; pastel fields mark which risk you are looking at; one electric blue says what insurance pays and what you can do. The black sidebar is the binder spine that holds it together.\n\nDensity is moderate and calm: large rounded cards on an 18px rhythm, generous internal padding, one huge Bricolage numeral per hero, and short plain-English copy in DM Sans. Numbers are the protagonists and are always set in the display face. Depth comes from ink lines and three tonal paper steps, not from shadows.\n\nThe world is inherited from the original ShieldWise prototype and extended, not replaced. It ships light and dark themes from the same token names.",
+    "keyCharacteristics": [
+      "Cream paper ground, cream cards, darker cream wells: three tonal steps of the same paper.",
+      "1.5px ink outlines on every card and outer control; hairlines only inside.",
+      "Everything interactive is a full pill; every container is a large rounded rectangle.",
+      "Pastel fields identify risk categories; text on a pastel is always ink.",
+      "Electric blue is reserved for coverage, the action field, and focus.",
+      "Bricolage Grotesque for every number and heading, tight negative tracking, tabular figures."
+    ],
+    "rules": [
+      {
+        "name": "The Blue Pays Rule",
+        "body": "Electric blue means coverage, action, or focus. It is never a decorative fill, and a blue bar always means money a policy would pay.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-On-Pastel Rule",
+        "body": "Text on any pastel or on yellow/orange is ink (#16140f) in both themes. Pastels do not invert in dark mode.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Tone Per Category Rule",
+        "body": "A category's pastel is set once in data and reused everywhere that category appears. Never assign a pastel for decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Numbers Wear Bricolage Rule",
+        "body": "Every multiplier, dollar amount, price, count and delta is set in Bricolage Grotesque with negative tracking and tabular figures. Body numerals inside sentences may stay in DM Sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence-Case Rule",
+        "body": "No uppercase labels and no tracked-out small caps. Labels are sentence case at 12-12.5px, weight 600.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Nothing casts a shadow at rest. A shadow means hover, selection or a floating layer.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** outline every card and outer control with a 1.5px ink line; use the hairline only for dividers inside a card.",
+      "**Do** nest paper steps: paper ground, cream card, darker well inside.",
+      "**Do** set every number in Bricolage Grotesque 600 with negative tracking and tabular figures.",
+      "**Do** use the full pill (999px) for every button, field, tag and segmented control.",
+      "**Do** give each category one pastel tone from data and reuse it everywhere that category appears.",
+      "**Do** keep ink text on pastels, yellow and orange in both themes.",
+      "**Do** reserve electric blue for coverage fills, the action field, focus and rare commit buttons.",
+      "**Do** use soft negative-spread shadows only for hover, selection and floating layers.",
+      "**Do** honor reduced motion; every transition collapses to near zero."
+    ],
+    "donts": [
+      "**Don't** use grey or low-contrast outlines on cards; the line is ink.",
+      "**Don't** use blue as a decorative fill or for anything other than coverage, action or focus.",
+      "**Don't** put white text on a pastel.",
+      "**Don't** add uppercase, letter-spaced labels or eyebrow lines above headings.",
+      "**Don't** use hard offset shadows or shadows at rest.",
+      "**Don't** introduce square corners on containers; radii step down with nesting, never to zero.",
+      "**Don't** use the serif outside verbatim policy wording."
+    ]
+  }
+}
