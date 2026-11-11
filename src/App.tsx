@@ -9,7 +9,6 @@ import {Overview} from './pages/Overview';
 import {RiskProfile} from './pages/RiskProfile';
 import {PolicyHub} from './pages/PolicyHub';
 import {Coverage} from './pages/Coverage';
-import {Simulator} from './pages/Simulator';
 import {Learn} from './pages/Learn';
 import {Shop} from './pages/Shop';
 import {Onboarding} from './pages/Onboarding';
@@ -57,8 +56,6 @@ export function App() {
               <Route path="policies" element={<PolicyHub />} />
               <Route path="policies/:id" element={<PolicyHub />} />
               <Route path="coverage" element={<Coverage />} />
-              <Route path="simulator" element={<Simulator />} />
-              <Route path="simulator/:id" element={<Simulator />} />
               <Route path="shop" element={<Shop />} />
               <Route path="shop/:product" element={<Shop />} />
               <Route path="learn" element={<Learn />} />

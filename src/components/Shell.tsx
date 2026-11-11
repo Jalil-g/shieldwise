@@ -3,7 +3,7 @@ import {NavLink, Outlet, useLocation, useNavigate} from 'react-router-dom';
 import {Drawer} from '@astryxdesign/core/Drawer';
 import {CommandPalette} from '@astryxdesign/core/CommandPalette';
 import {createStaticSource} from '@astryxdesign/core/Typeahead';
-import {BookOpen, Check, ChevronsUpDown, FolderLock, Gauge, Home, Menu, Monitor, Moon, RotateCcw, Scale, Search, SlidersHorizontal, Sun, X} from 'lucide-react';
+import {BookOpen, Check, ChevronsUpDown, FolderLock, Gauge, Home, Menu, Monitor, Moon, RotateCcw, Scale, Search, Sun, X} from 'lucide-react';
 import {useApp} from '../state';
 import {Logo} from './icons';
 import {PERSONAS, type Industry} from '../data';
@@ -13,7 +13,6 @@ import {mult} from '../lib/format';
 const NAV = [
   {to: '/', label: 'Overview', icon: Home, end: true},
   {to: '/risk', label: 'Risk profile', icon: Gauge},
-  {to: '/simulator', label: 'What-if', icon: SlidersHorizontal},
   {to: '/coverage', label: 'Coverage', icon: Scale},
   {to: '/policies', label: 'Policies', icon: FolderLock},
   {to: '/learn', label: 'Learn', icon: BookOpen},
@@ -60,9 +59,6 @@ function useSearchItems(): SearchItem[] {
     );
     SHOP[persona.id].forEach(p =>
       items.push({id: 'shop-' + p.id, label: 'Get quotes: ' + p.name, auxiliaryData: {kind: 'Quotes', to: '/shop/' + p.id, hint: p.quotes.length + ' providers'}}),
-    );
-    persona.scenarios.forEach(s =>
-      items.push({id: 'sc-' + s.id, label: s.name, auxiliaryData: {kind: 'Scenario', to: '/simulator/' + s.id, hint: 'Run what-if'}}),
     );
     persona.glossary.forEach(g =>
       items.push({id: 'g-' + g.term, label: g.term, auxiliaryData: {kind: 'Term', to: '/learn?term=' + encodeURIComponent(g.term), hint: g.def}}),
@@ -168,7 +164,7 @@ function useOutside(ref: React.RefObject<HTMLElement | null>, fn: () => void) {
 function SideBody({onNavigate, onSearch}: {onNavigate?: () => void; onSearch: () => void}) {
   return (
     <>
-      <button className="side-search" onClick={onSearch} aria-label="Search risks, policies, scenarios and terms">
+      <button className="side-search" onClick={onSearch} aria-label="Search risks, policies and terms">
         <Search size={16} aria-hidden="true" />
         <span>Search</span>
         <span className="kbd">⌘K</span>
@@ -242,8 +238,8 @@ export function Shell() {
         onOpenChange={setSearchOpen}
         searchSource={source}
         label="Search ShieldWise"
-        emptySearchText="Nothing matches. Try “deductible” or “ransomware”."
-        emptyBootstrapText="Search pages, risks, policies, scenarios and insurance terms."
+        emptySearchText="Nothing matches. Try “deductible” or “cyber”."
+        emptyBootstrapText="Search pages, risks, policies and insurance terms."
         onValueChange={id => {
           const it = items.find(i => i.id === id);
           if (it) {

@@ -165,7 +165,7 @@ function NeedsStep({
               marks={product.limits.map((l, i) => ({value: i, label: moneyShort(l)}))}
             />
             {product.id === 'cyber' && needs.limit < 1_000_000 && gapTip && (
-              <p className="warnline">Your sample breach scenario costs about $1.15M. Below {moneyShort(gapTip)} you keep most of that risk.</p>
+              <p className="warnline">A typical breach at your size costs about $1.15M. Below {moneyShort(gapTip)} you keep most of that risk.</p>
             )}
           </div>
         </div>
