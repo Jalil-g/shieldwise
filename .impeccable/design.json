@@ -404,7 +404,7 @@
       }
     ],
     "layout": {
-      "sidebar": "252px",
+      "sidebar": "240px",
       "outerPadding": "18px (12px under 960px)",
       "gridColumns": 12,
       "gridGap": "18px",
@@ -482,7 +482,7 @@
     "overview": "ShieldWise reads like a well-kept paper ledger that someone has gone over with a felt pen and a set of highlighters. The ground is warm cream paper; every card and control is drawn with a confident ink outline; pastel fields mark which risk you are looking at; one electric blue says what insurance pays and what you can do. The black sidebar is the binder spine that holds it together.\n\nDensity is moderate and calm: large rounded cards on an 18px rhythm, generous internal padding, one huge Bricolage numeral per hero, and short plain-English copy in DM Sans. Numbers are the protagonists and are always set in the display face. Depth comes from ink lines and three tonal paper steps, not from shadows.\n\nThe world is inherited from the original ShieldWise prototype and extended, not replaced. It ships light and dark themes from the same token names.",
     "keyCharacteristics": [
       "Cream paper ground, cream cards, darker cream wells: three tonal steps of the same paper.",
-      "1.5px ink outlines on every card and outer control; hairlines only inside.",
+      "1px soft borders on cards and outer controls at rest, stronger on hover; 1.5px ink reserved for checkboxes and pressed states.",
       "Everything interactive is a full pill; every container is a large rounded rectangle.",
       "Pastel fields identify risk categories; text on a pastel is always ink.",
       "Electric blue is reserved for coverage, the action field, and focus.",
@@ -521,7 +521,7 @@
       }
     ],
     "dos": [
-      "**Do** outline every card and outer control with a 1.5px ink line; use the hairline only for dividers inside a card.",
+      "**Do** give cards and outer controls a 1px soft border that strengthens on hover; use the hairline only for dividers inside a card.",
       "**Do** nest paper steps: paper ground, cream card, darker well inside.",
       "**Do** set every number in Bricolage Grotesque 600 with negative tracking and tabular figures.",
       "**Do** use the full pill (999px) for every button, field, tag and segmented control.",
