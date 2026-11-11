@@ -72,25 +72,8 @@ export interface Gap {
   /** Estimated uncovered amount in a typical bad event. */
   exposure: number;
   fix: string;
+  /** Shop product that closes this gap. */
   compareId?: string;
-}
-
-export interface QuoteOption {
-  id: string;
-  carrier: string;
-  label: string;
-  premium: number;
-  isCurrent?: boolean;
-  rows: Record<string, string | number | boolean>;
-  note: string;
-}
-
-export interface Comparison {
-  id: string;
-  title: string;
-  subtitle: string;
-  rows: {key: string; label: string; kind: 'money' | 'text' | 'bool'; hint?: string; higherIsBetter?: boolean}[];
-  options: QuoteOption[];
 }
 
 export interface CostLine {
@@ -162,7 +145,6 @@ export interface Persona {
   actions: RiskAction[];
   policies: Policy[];
   gaps: Gap[];
-  comparisons: Comparison[];
   scenarios: Scenario[];
   guides: Guide[];
   glossary: GlossaryTerm[];
