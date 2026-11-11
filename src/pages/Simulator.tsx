@@ -27,22 +27,18 @@ export function Simulator() {
     <>
       <section className="hello">
         <div>
-          <h1>What-if simulator</h1>
-          <p>Pick something that could go wrong. We’ll show what your policies would pay, line by line, and what you’d pay yourself.</p>
+          <h1>What if…</h1>
+          <p>Pick something that could go wrong. See what your policies pay, and what you’d pay yourself.</p>
         </div>
       </section>
 
-      <section className="card" aria-labelledby="h-sc">
-        <h2 id="h-sc" className="h3" style={{marginBottom: 12}}>
-          Choose a scenario for {persona.business.name}
-        </h2>
+      <section aria-label="Choose a scenario">
         <div className="scen" role="radiogroup" aria-label="Scenario">
           {persona.scenarios.map(s => (
             <button
               key={s.id}
               role="radio"
               aria-checked={s.id === sc.id}
-              aria-pressed={s.id === sc.id}
               onClick={() => {
                 nav(`/simulator/${s.id}`, {replace: true});
                 setAlt(false);
@@ -55,7 +51,7 @@ export function Simulator() {
       </section>
 
       <div className="grid">
-        <section className="card s5" aria-labelledby="h-res" style={{display: 'flex', flexDirection: 'column', gap: 18}}>
+        <section className="card s5" aria-labelledby="h-res" style={{display: 'flex', flexDirection: 'column', gap: 22}}>
           <div>
             <h2 id="h-res">{sc.name}</h2>
             <p className="sub">{sc.blurb}</p>
@@ -66,7 +62,7 @@ export function Simulator() {
             </p>
             <div className="sev" role="radiogroup" aria-labelledby="sev-l">
               {SEV.map((l, i) => (
-                <button key={l} role="radio" aria-checked={sev === i} aria-pressed={sev === i} onClick={() => setSev(i as 0 | 1 | 2)}>
+                <button key={l} role="radio" aria-checked={sev === i} onClick={() => setSev(i as 0 | 1 | 2)}>
                   {l}
                 </button>
               ))}
@@ -105,16 +101,17 @@ export function Simulator() {
             <div className="well" style={{padding: 14}}>
               <Switch
                 label={sc.alt.label}
-                description="Replay this scenario with the recommended coverage in place."
+                description="Replay it with the recommended coverage."
                 value={alt}
                 onChange={setAlt}
                 labelSpacing="spread"
+                labelPosition="start"
                 width="100%"
               />
             </div>
           )}
-          <p className="well" style={{padding: '12px 14px', fontSize: 14, display: 'grid', gridTemplateColumns: '20px 1fr', gap: 10}}>
-            <Lightbulb size={18} aria-hidden="true" />
+          <p className="takeaway">
+            <Lightbulb size={17} aria-hidden="true" />
             <span>{sc.takeaway}</span>
           </p>
         </section>
@@ -124,7 +121,7 @@ export function Simulator() {
             <div>
               <h2 id="h-led">Where the money goes</h2>
               <p className="sub">
-                Total cost about <b style={{color: 'var(--ink)'}}>{money(r.total)}</b>. Deductibles apply once per policy, and sublimits cap individual lines.
+                About <b style={{color: 'var(--ink)'}}>{money(r.total)}</b> in total. Deductibles and sublimits explain the gaps.
               </p>
             </div>
           </div>
@@ -145,14 +142,10 @@ export function Simulator() {
               <div className="lrow" role="row" key={l.label}>
                 <span role="cell">
                   <b style={{fontWeight: 600}}>{l.label}</b>
-                  <small style={{display: 'block', color: l.you > 0 ? 'var(--ink)' : 'var(--muted)', fontSize: 12.5}}>
+                  <small style={{display: 'block', color: l.you > 0 ? 'var(--ink)' : 'var(--muted)', fontSize: 13}}>
                     {l.reason}
                     <span className="num"> · {moneyShort(l.cost)}</span>
                   </small>
-                  <span className="mini" aria-hidden="true">
-                    <i style={{width: `${l.cost ? (l.covered / l.cost) * 100 : 0}%`, background: 'var(--blue)'}} />
-                    <i style={{width: `${l.cost ? (l.you / l.cost) * 100 : 0}%`, background: 'var(--pink)'}} />
-                  </span>
                 </span>
                 <span role="cell" className="who-pays" style={{fontSize: 13, color: 'var(--muted)'}}>
                   {l.policyName ?? 'Nobody'}
@@ -176,9 +169,6 @@ export function Simulator() {
               </span>
             </div>
           </div>
-          <p className="fine" style={{marginTop: 12}}>
-            Illustrative estimates for a prototype, not a quote or a claim decision.
-          </p>
         </section>
       </div>
     </>

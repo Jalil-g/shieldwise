@@ -101,7 +101,7 @@ export function TrendChart({points, live}: {points: TrendPoint[]; live: number})
 
   return (
     <div className="trend">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Weekly risk multiplier from ${data[0].week} (${mult(data[0].value)}) to now (${mult(live)}).`}>
+      <svg viewBox={`0 0 ${W} ${H}`} role="group" aria-label={`Weekly risk multiplier from ${data[0].week} (${mult(data[0].value)}) to now (${mult(live)}).`}>
         {grid.map(g => (
           <g key={g}>
             <line x1={pad.l} x2={W - pad.r} y1={y(g)} y2={y(g)} stroke="var(--track)" strokeWidth={g === 1 ? 2 : 1} strokeDasharray={g === 1 ? '0' : '3 5'} />

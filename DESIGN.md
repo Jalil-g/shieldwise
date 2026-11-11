@@ -7,7 +7,10 @@ colors:
   well: "#f3eddd"
   ink: "#16140f"
   muted-ink: "#625d51"
-  hairline: "rgba(22, 20, 15, 0.14)"
+  hairline: "rgba(22, 20, 15, 0.10)"
+  border: "rgba(22, 20, 15, 0.13)"
+  border-strong: "rgba(22, 20, 15, 0.42)"
+  surface: "#f6f1e5"
   track: "#e4dbc6"
   sidebar-black: "#100f0b"
   sidebar-text: "#cfc9ba"
@@ -76,11 +79,11 @@ typography:
     lineHeight: 1.3
 rounded:
   pill: "999px"
-  sidebar: "30px"
-  card: "28px"
-  card-compact: "24px"
+  page: "26px"
+  card: "22px"
+  card-compact: "20px"
   popover: "22px"
-  well: "20px"
+  well: "16px"
   term: "16px"
   tile: "14px"
   mark: "8px"
@@ -138,7 +141,7 @@ components:
     height: "46px"
   nav-item:
     backgroundColor: "transparent"
-    textColor: "{colors.sidebar-text}"
+    textColor: "{colors.muted-ink}"
     rounded: "{rounded.pill}"
     padding: "10px 14px"
   nav-item-active:
@@ -331,3 +334,17 @@ A full-width yellow card with an ink outline, a 68px ink "days left" block with 
 - **Don't** use hard offset shadows or shadows at rest.
 - **Don't** introduce square corners on containers; radii step down with nesting, never to zero.
 - **Don't** use the serif outside verbatim policy wording.
+
+## Distilled restraint (Nov 2026)
+
+The app was simplified with dub.co as the reference for restraint. The ledger personality stays: paper, Bricolage numerals, highlighter yellow, category pastels and the blue action field. The noise is gone.
+
+- **One job per page.** Overview: multiplier, top three actions, would-your-policies-pay. Risk: category list and detail, with the trend chart under the list. Policies: cards only; upload lives in a drawer behind "Add a policy". Coverage & quotes: ranked gaps, each linking straight into the quote flow (the separate catalog page and the /shop index are gone; /shop redirects to /coverage). What-if: scenario pills, result and ledger. Learn: three cream guide cards and the glossary.
+- **Shell.** The black sidebar slab is retired. The sidebar sits flush on paper: brand, a search pill (⌘K), six nav pills (active is the yellow highlighter), a one-line neutral-advisor note with a pink dot, and the account/demo-business switcher at the foot (menu opens upward). Content sits in one `surface` panel (26px radius, 1px border). The top bar, the persona toggle and the notification bell are gone. On phones the panel dissolves and cards sit directly on paper.
+- **Lines.** Cards and outer controls use a 1px `border` at rest and `border-strong` on hover. The 1.5px ink outline is reserved for checkboxes and pressed states. This supersedes "1.5px ink outlines on every card" above.
+- **Type scale.** Page titles are clamp(30px, 3vw, 40px); card titles 21px. The hero multiplier keeps its display size, so it is the only loud number on a page.
+- **Copy.** Page intros are one sentence. Repeated explanations (neutral-advisor cards, "what providers see", "worth knowing", timeline legends) are each said once, where the decision happens.
+- **Motion.** Route changes use the View Transitions API (`viewTransition` on nav links): the `page` panel fades out in 140ms and rises 8px into place over 320ms. Re-sorting or filtering quotes animates each row to its new position (a `q-<id>` transition name on every row). Buttons scale to 0.97 when pressed; tick circles overshoot slightly. All of this is off under reduced motion.
+- **Quote rows.** A row shows the monogram, carrier name and badge, then a line with the rating and claims days, the must-haves as a single inline row of ticks, and the highlight with any caveat. Price, "Compare" and "Choose" sit on the right. On phones a sticky blue bar replaces the match card: "N of M match · from $X" with a "Compare N" button.
+- **Floating layers.** The compare tray is a cream pill with a stronger border and a soft shadow, not a black slab. The policy drawer header is cream with a 6px category-colour band along the top; flagged terms get a light yellow tint and an orange dot.
+- **Text floor.** Secondary text is at least 13px, `--muted` is #5a5549, and card cream (#fdfaf3) sits visibly above the panel (#f3eee2). The axe audit for WCAG 2.2 AA reports zero violations on every route, in both themes, for both personas, at 1440px and 390px.

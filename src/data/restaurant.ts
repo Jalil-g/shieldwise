@@ -285,7 +285,7 @@ export const restaurant: Persona = {
       why: 'Restaurants have some of the highest rates of wage-and-hour and harassment claims, and none of your policies respond.',
       exposure: 95_000,
       fix: 'Add EPLI with wage-and-hour defense',
-      compareId: 'bop',
+      compareId: 'epl-r',
     },
     {
       id: 'g-ab',
@@ -295,6 +295,7 @@ export const restaurant: Persona = {
       why: 'Late-night bars see more assault claims. Your liquor policy covers them only up to $100K.',
       exposure: 150_000,
       fix: 'Raise the assault & battery sublimit to $500K',
+      compareId: 'liquor',
     },
     {
       id: 'g-spoil',
@@ -305,56 +306,6 @@ export const restaurant: Persona = {
       exposure: 8_000,
       fix: 'Raise spoilage to $25K. It usually costs under $100 a year.',
       compareId: 'bop',
-    },
-  ],
-  comparisons: [
-    {
-      id: 'bop',
-      title: 'Business owner’s policy options',
-      subtitle: 'Compare packages that close your income and employment gaps. Your BOP renews Apr 1.',
-      rows: [
-        {key: 'bi', label: 'Lost income period', kind: 'text', hint: 'How long lost income is paid after a covered loss'},
-        {key: 'property', label: 'Property limit', kind: 'money', higherIsBetter: true},
-        {key: 'spoil', label: 'Spoilage', kind: 'money', higherIsBetter: true},
-        {key: 'epl', label: 'Employment practices', kind: 'bool'},
-        {key: 'deductible', label: 'Deductible', kind: 'money', higherIsBetter: false},
-        {key: 'hood', label: 'Hood-cleaning condition', kind: 'text', hint: 'What you must do to keep fire cover valid'},
-      ],
-      options: [
-        {
-          id: 'current',
-          carrier: 'Harbor Mutual',
-          label: 'Today',
-          premium: 6_240,
-          isCurrent: true,
-          rows: {bi: '30 days', property: 420_000, spoil: 10_000, epl: false, deductible: 2_500, hood: 'Semi-annual contract'},
-          note: 'Renews as-is on Apr 1 unless you change it.',
-        },
-        {
-          id: 'a',
-          carrier: 'Midwest Hospitality Group',
-          label: 'Balanced',
-          premium: 7_860,
-          rows: {bi: '12 months', property: 450_000, spoil: 25_000, epl: true, deductible: 2_500, hood: 'Quarterly, tags on file'},
-          note: 'Built for restaurants. Closes the income, spoilage and employment gaps in one package.',
-        },
-        {
-          id: 'b',
-          carrier: 'Harbor Mutual',
-          label: 'Add-ons',
-          premium: 7_150,
-          rows: {bi: '6 months', property: 420_000, spoil: 25_000, epl: false, deductible: 5_000, hood: 'Semi-annual contract'},
-          note: 'Keep your carrier and add endorsements. Cheaper, but leaves employment claims open.',
-        },
-        {
-          id: 'c',
-          carrier: 'Fairway Specialty',
-          label: 'Max',
-          premium: 9_480,
-          rows: {bi: '18 months', property: 500_000, spoil: 50_000, epl: true, deductible: 1_000, hood: 'Quarterly, tags on file'},
-          note: 'Strongest cover. Worth considering if you sign a longer lease or open a second location.',
-        },
-      ],
     },
   ],
   scenarios: [
@@ -471,7 +422,7 @@ export const restaurant: Persona = {
       points: [
         'Your BOP requires a semi-annual hood-cleaning contract.',
         'If it lapses and a hood fire happens, the carrier can deny the claim.',
-        'Keep cleaning tags and invoices in your Policy Hub.',
+        'Keep cleaning tags and invoices in Policies.',
       ],
     },
   ],

@@ -11,6 +11,7 @@ import {PolicyHub} from './pages/PolicyHub';
 import {Coverage} from './pages/Coverage';
 import {Simulator} from './pages/Simulator';
 import {Learn} from './pages/Learn';
+import {Shop} from './pages/Shop';
 import {Onboarding} from './pages/Onboarding';
 
 function ScrollTop() {
@@ -58,6 +59,8 @@ export function App() {
               <Route path="coverage" element={<Coverage />} />
               <Route path="simulator" element={<Simulator />} />
               <Route path="simulator/:id" element={<Simulator />} />
+              <Route path="shop" element={<Shop />} />
+              <Route path="shop/:product" element={<Shop />} />
               <Route path="learn" element={<Learn />} />
             </Route>
             <Route path="*" element={<Navigate to="/" replace />} />

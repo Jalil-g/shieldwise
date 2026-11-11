@@ -19,7 +19,7 @@ export function Learn() {
       <section className="hello">
         <div>
           <h1>Learn</h1>
-          <p>Short, plain-English guides matched to the coverage {persona.business.name} owns, and the terms you’ll see on your policies.</p>
+          <p>Short guides for the coverage {persona.business.name} owns, and the terms on your policies.</p>
         </div>
       </section>
 
@@ -27,29 +27,25 @@ export function Learn() {
         {persona.guides.map(g => {
           const pol = policies.find(p => p.id === g.policy);
           return (
-            <article key={g.id} className="guide s4" style={{background: `var(--${g.tone})`}}>
-              <h2 className="h2" style={{fontSize: 24}}>
-                {g.title}
-              </h2>
-              <div style={{display: 'flex', gap: 8, flexWrap: 'wrap'}}>
-                <span className="pill" style={{background: 'rgba(255,255,255,.6)', color: '#16140f'}}>
-                  <Clock size={13} aria-hidden="true" /> {g.minutes} min
-                </span>
+            <article key={g.id} className="card guide s4">
+              <span className="guide-tab" style={{background: `var(--${g.tone})`}} aria-hidden="true" />
+              <h2 className="h3">{g.title}</h2>
+              <p className="guide-meta">
+                <Clock size={13} aria-hidden="true" /> {g.minutes} min
                 {pol ? (
-                  <Link to={`/policies/${pol.id}`} className="pill" style={{background: '#16140f', color: '#faf6ec', textDecoration: 'none'}}>
-                    About your {pol.short}
-                  </Link>
+                  <>
+                    {' · '}
+                    <Link to={`/policies/${pol.id}`}>About your {pol.short}</Link>
+                  </>
                 ) : (
-                  <span className="pill" style={{background: 'rgba(255,255,255,.6)', color: '#16140f'}}>
-                    Before you buy
-                  </span>
+                  ' · Before you buy'
                 )}
-              </div>
-              <ol>
+              </p>
+              <ul>
                 {g.points.map(p => (
                   <li key={p}>{p}</li>
                 ))}
-              </ol>
+              </ul>
             </article>
           );
         })}
@@ -57,8 +53,8 @@ export function Learn() {
         <section className="card s12" aria-labelledby="h-gl">
           <div className="head" style={{flexWrap: 'wrap'}}>
             <div>
-              <h2 id="h-gl">Terms you’ll see on your policies</h2>
-              <p className="sub">Highlighted notes show where each term appears in your own coverage.</p>
+              <h2 id="h-gl">Glossary</h2>
+              <p className="sub">Highlighted notes show where a term shows up in your coverage.</p>
             </div>
             <label className="field" style={{minWidth: 260}}>
               <Search size={17} aria-hidden="true" />

@@ -2,9 +2,10 @@ import {Link} from 'react-router-dom';
 import {ArrowRight, Check, Download, Info} from 'lucide-react';
 import {Tooltip} from '@astryxdesign/core/Tooltip';
 import {useApp} from '../state';
-import {PeerStrip, TrendChart, useTween} from '../components/viz';
+import {SHOP} from '../data/shop';
+import {PeerStrip, useTween} from '../components/viz';
 import {Chip} from '../components/icons';
-import {actionImpact, band, bestCase, categoryValue, percentile} from '../lib/risk';
+import {actionImpact, band, bestCase, percentile} from '../lib/risk';
 import {daysUntil, greeting, moneyShort, mult, shortDate} from '../lib/format';
 
 export function Overview() {
@@ -15,14 +16,8 @@ export function Overview() {
   const pct = percentile(persona, value);
   const b = band(value);
 
-  const topCats = [...persona.categories]
-    .map(c => ({c, v: categoryValue(c, persona, done)}))
-    .sort((a, z) => z.v * z.c.weight - a.v * a.c.weight)
-    .slice(0, 3);
-
-  const actions = [...persona.actions].sort((a, z) => actionImpact(persona, z.id) - actionImpact(persona, a.id)).slice(0, 4);
+  const actions = [...persona.actions].sort((a, z) => actionImpact(persona, z.id) - actionImpact(persona, a.id)).slice(0, 3);
   const renewal = [...policies].filter(p => daysUntil(p.renews) <= 90).sort((a, z) => a.renews.localeCompare(z.renews))[0];
-  const firstGap = persona.gaps.find(g => g.compareId);
   const renewalHasGap =
     !!renewal && persona.gaps.some(g => persona.categories.find(c => c.id === g.category)?.coveredBy.includes(renewal.id));
 
@@ -33,94 +28,68 @@ export function Overview() {
           <h1>
             {greeting()}, {persona.owner.first}
           </h1>
-          <p>
-            Here’s how exposed {persona.business.name} is compared with similar businesses, how well your policies cover it, and what would
-            move the number.
-          </p>
+          <p>Here’s where {persona.business.name} stands, and the few things that would move it.</p>
         </div>
-        <button className="btn no-print" onClick={() => window.print()}>
-          Download report
-          <span className="circ">
-            <Download size={14} aria-hidden="true" />
-          </span>
+        <button className="btn ghost sm no-print" onClick={() => window.print()}>
+          <Download size={15} aria-hidden="true" /> Report
         </button>
       </section>
 
       {renewal && (
-        <section className="banner fade-in" aria-label="Upcoming renewal">
-          <div className="days">
-            <b className="num">{daysUntil(renewal.renews)}</b>
-            <small>days</small>
-          </div>
-          <div>
-            <p className="h3" style={{color: '#16140f'}}>
-              Your {renewal.name.toLowerCase()} policy renews on {shortDate(renewal.renews)}
-            </p>
-            <p>
-              {renewalHasGap
-                ? `It auto-renews with the same gaps unless you change it. ${firstGap ? `We found ${persona.gaps.length} gaps, the biggest worth about ${moneyShort(Math.max(...persona.gaps.map(g => g.exposure)))} in a bad year.` : ''}`
-                : 'No gaps here, but update headcount and payroll before it renews so the year-end audit doesn’t surprise you.'}
-            </p>
-          </div>
-          <Link className="btn" to={renewalHasGap ? '/coverage' : `/policies/${renewal.id}`}>
-            {renewalHasGap ? 'Compare before you renew' : 'Review the policy'} <ArrowRight size={16} aria-hidden="true" />
-          </Link>
-        </section>
+        <Link
+          className="notice fade-in"
+          to={renewalHasGap ? `/shop/${SHOP[persona.id].find(p => p.replaces === renewal.id)?.id ?? ''}` : `/policies/${renewal.id}`}>
+          <span className="pill pastel num" style={{background: 'var(--yellow)'}}>
+            {daysUntil(renewal.renews)} days
+          </span>
+          <span className="notice-text">
+            <b>{renewal.name}</b> renews {shortDate(renewal.renews).replace(/, \d{4}$/, '')}
+            {renewalHasGap ? ` with ${persona.gaps.length} open gaps.` : '. Update headcount and payroll first.'}
+          </span>
+          <span className="notice-cta">
+            {renewalHasGap ? 'Compare quotes' : 'Review'} <ArrowRight size={15} aria-hidden="true" />
+          </span>
+        </Link>
       )}
 
       <div className="grid">
         <section className="card s8 hero-card" aria-labelledby="h-score">
-          <div className="hero">
-            <div className="head" style={{marginBottom: 0}}>
-              <h2 id="h-score">Your risk compared with peers</h2>
-              <Tooltip content="A relative measure. 1.0× is a typical business like yours. It is not the chance you’ll file a claim." placement="below">
-                <button className="link" style={{textDecoration: 'none'}} aria-label="What does this number mean?">
-                  <Info size={16} aria-hidden="true" /> What is this?
-                </button>
-              </Tooltip>
+          <div className="head" style={{marginBottom: 0}}>
+            <h2 id="h-score">Your risk vs. peers</h2>
+            <Tooltip content="A relative measure. 1.0× is a typical business like yours. It is not the chance you’ll file a claim." placement="below">
+              <button className="icon-btn" aria-label="What does this number mean?">
+                <Info size={17} aria-hidden="true" />
+              </button>
+            </Tooltip>
+          </div>
+          <div className="hero-top">
+            <div className="big-mult" aria-label={`${mult(value)} the exposure of a typical peer`}>
+              <span className="num">{shown.toFixed(1)}</span>
+              <span className="x">×</span>
             </div>
-            <div className="hero-top">
-              <div className="big-mult" aria-label={`${mult(value)} the exposure of a typical peer`}>
-                <span className="num">{shown.toFixed(1)}</span>
-                <span className="x">×</span>
-              </div>
-              <div className="hero-copy">
-                <p className="lead">
-                  {persona.business.name} is <b>{mult(value)}</b> as exposed as a typical {persona.business.peer}.
-                </p>
-                <p className="sub" style={{marginTop: 10}}>
-                  <span className="pill pastel" style={{background: b.tone, marginRight: 8}}>
-                    {b.label}
-                  </span>
-                  More exposed than {pct}% of peers.
-                </p>
-              </div>
-            </div>
-            <PeerStrip persona={persona} value={value} goal={goal} />
-            <div className="drivers-wrap">
-              <h3 className="h3" style={{marginBottom: 10}}>
-                What’s driving it
-              </h3>
-              <div className="drivers">
-                {topCats.map(({c, v}) => (
-                  <Link key={c.id} to={`/risk/${c.id}`} className="driver">
-                    <Chip name={c.icon} tone={c.tone} size={38} />
-                    <span>
-                      <span className="v num">{mult(v)}</span>
-                    </span>
-                    <b style={{gridColumn: '1 / -1'}}>{c.name}</b>
-                  </Link>
-                ))}
-              </div>
+            <div className="hero-copy">
+              <p className="lead">
+                {persona.business.name} is <b>{mult(value)}</b> as exposed as a typical {persona.business.peer}.
+              </p>
+              <p className="sub" style={{marginTop: 10}}>
+                <span className="pill pastel" style={{background: b.tone, marginRight: 8}}>
+                  {b.label}
+                </span>
+                Higher than {pct}% of peers.
+              </p>
             </div>
           </div>
+          <PeerStrip persona={persona} value={value} goal={goal} />
         </section>
 
         <section className="card s4 actions-card" aria-labelledby="h-act">
           <div>
             <h2 id="h-act">Lower your number</h2>
-            <p className="sub">
-              Do all {persona.actions.length} and you’d sit at <b style={{color: '#fff'}}>{mult(goal)}</b>. Tick one off to see it move.
+            <p className="goal-line">
+              <span className="goal-pill num" aria-label={`From ${mult(value)} to ${mult(goal)}`}>
+                {mult(value)} <ArrowRight size={14} strokeWidth={2.5} aria-hidden="true" /> {mult(goal)}
+              </span>
+              <span>if you finish all {persona.actions.length}</span>
             </p>
           </div>
           <div>
@@ -128,7 +97,7 @@ export function Overview() {
               const on = done.has(a.id);
               return (
                 <button key={a.id} className="act" aria-pressed={on} onClick={() => toggleAction(a.id)}>
-                  <span className="ck">{on && <Check size={16} strokeWidth={3} aria-hidden="true" />}</span>
+                  <span className="ck">{on && <Check size={15} strokeWidth={3} aria-hidden="true" />}</span>
                   <span>
                     <b>{a.title}</b>
                     <small>
@@ -142,36 +111,22 @@ export function Overview() {
               );
             })}
           </div>
-          <Link to="/risk" className="btn" style={{background: '#fff', color: '#16140f', borderColor: '#fff', alignSelf: 'flex-start', marginTop: 'auto'}}>
-            See every action <ArrowRight size={16} aria-hidden="true" />
+          <Link to="/risk" className="link on-blue">
+            All {persona.actions.length} actions <ArrowRight size={15} aria-hidden="true" />
           </Link>
         </section>
 
-        <section className="card s7" aria-labelledby="h-cov">
+        <section className="card s12" aria-labelledby="h-cov">
           <div className="head">
             <div>
-              <h2 id="h-cov">Are you covered?</h2>
-              <p className="sub">Each bar is a typical bad event for that risk. Blue is what your policies would pay.</p>
+              <h2 id="h-cov">Would your policies pay?</h2>
+              <p className="sub">Each bar is a typical bad event. Blue is what your policies would pay.</p>
             </div>
             <Link to="/coverage" className="link">
               Close gaps <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </div>
           <CoverageMap />
-        </section>
-
-        <section className="card s5" aria-labelledby="h-trend">
-          <div className="head">
-            <div>
-              <h2 id="h-trend">Last 24 weeks</h2>
-              <p className="sub">What changed and why. Tap a dot.</p>
-            </div>
-            <span className="pill pastel num" style={{background: 'var(--yellow)'}}>
-              {value >= persona.trend[0].value ? '+' : '−'}
-              {Math.abs(value - persona.trend[0].value).toFixed(2)} since {persona.trend[0].week}
-            </span>
-          </div>
-          <TrendChart points={persona.trend} live={value} />
         </section>
       </div>
     </>

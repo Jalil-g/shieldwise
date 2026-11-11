@@ -2,7 +2,22 @@ import {createContext, useCallback, useContext, useEffect, useMemo, useState, ty
 import {PERSONAS, type Industry, type Persona, type Policy} from './data';
 import {overall} from './lib/risk';
 
+export interface QuoteRequest {
+  id: string;
+  product: string;
+  productName: string;
+  quote: string;
+  carrier: string;
+  price: number;
+  pay: 'annual' | 'monthly';
+  limit: number;
+  deductible: number;
+  start: string;
+  at: string;
+}
+
 interface Stored {
+  requests: Record<Industry, QuoteRequest[]>;
   persona: Industry;
   done: Record<Industry, string[]>;
   uploaded: Record<Industry, boolean>;
@@ -13,6 +28,7 @@ interface Stored {
 
 const KEY = 'shieldwise:v1';
 const initial: Stored = {
+  requests: {saas: [], restaurant: []},
   persona: 'saas',
   done: {saas: [], restaurant: []},
   uploaded: {saas: false, restaurant: false},
@@ -47,6 +63,9 @@ interface Ctx {
   onboarded: boolean;
   finishOnboarding: (id: Industry) => void;
   reset: () => void;
+  requests: QuoteRequest[];
+  addRequest: (r: QuoteRequest) => void;
+  cancelRequest: (id: string) => void;
 }
 
 const AppCtx = createContext<Ctx | null>(null);
@@ -99,6 +118,14 @@ export function AppProvider({children}: {children: ReactNode}) {
     onboarded: s.onboarded,
     finishOnboarding: id => set(prev => ({...prev, persona: id, onboarded: true})),
     reset: () => set({...initial, theme: s.theme}),
+    requests: s.requests?.[s.persona] ?? [],
+    addRequest: r =>
+      set(prev => ({
+        ...prev,
+        requests: {...prev.requests, [prev.persona]: [r, ...(prev.requests?.[prev.persona] ?? []).filter(x => x.product !== r.product)]},
+      })),
+    cancelRequest: id =>
+      set(prev => ({...prev, requests: {...prev.requests, [prev.persona]: (prev.requests?.[prev.persona] ?? []).filter(x => x.id !== id)}})),
   };
 
   return <AppCtx.Provider value={value}>{children}</AppCtx.Provider>;

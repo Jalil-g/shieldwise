@@ -79,7 +79,7 @@ export function Onboarding() {
             ))}
           </ul>
         </div>
-        <p style={{color: '#9c978a', fontSize: 12.5}}>Prototype with sample businesses. Nothing you enter is stored outside this browser.</p>
+        <p style={{color: '#a8a395', fontSize: 13}}>Prototype with sample businesses. Nothing you enter is stored outside this browser.</p>
       </div>
 
       <div className="ob-right">
