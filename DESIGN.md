@@ -199,7 +199,7 @@ Warm paper and ink with a small box of highlighters and a single electric blue.
 - **Alert Orange** (`alert-orange`): counts, unread dots, gap bars, and "not covered" status dots. Small doses only, always with ink text.
 
 ### Tertiary (category pastels)
-- **Blush Pink** (`blush-pink`), **Periwinkle** (`periwinkle`), **Sage** (`sage`), **Lilac** (`lilac`), with Yellow and Orange also available as category tones. Each risk category, policy, scenario and guide carries one `tone` in the data and wears it consistently as its icon chip, tag and tooltip field. Periwinkle also marks the "Typical 1.0×" peer marker and the comparison verdict; sage marks the "Possible" goal marker, positive terms and "better" diffs; pink marks "worse" diffs and the neutral-advisor note.
+- **Blush Pink** (`blush-pink`), **Periwinkle** (`periwinkle`), **Sage** (`sage`), **Lilac** (`lilac`), with Yellow and Orange also available as category tones. Each risk category, policy and guide carries one `tone` in the data and wears it consistently as its icon chip, tag and tooltip field. Periwinkle also marks the "Typical 1.0×" peer marker and the comparison verdict; sage marks the "Possible" goal marker, positive terms and "better" diffs; pink marks "worse" diffs and the neutral-advisor note.
 
 ### Neutral
 - **Paper** (`paper`): page ground.
@@ -265,7 +265,7 @@ Flat at rest. Depth comes from the ink outline and from three paper steps (paper
 
 ## Shapes
 
-Two shapes only: the full pill for anything you press or type into, and the large soft rectangle for anything that holds content. Radii step down as you nest: sidebar 30px, card 28px, option card 24px, popover 22px, well row 20px, term row 16px, tile and icon chip 14px, checkbox 8px. Icon chips are pastel squares at the 14px radius (circles inside scenario pills). Card outlines are 1.5px ink; inner wells carry a transparent 1.5px border that turns ink on hover so nothing shifts. Dashed lines mean "possible" or "drop here": the goal marker, its stem, and the upload zone.
+Two shapes only: the full pill for anything you press or type into, and the large soft rectangle for anything that holds content. Radii step down as you nest: sidebar 30px, card 28px, option card 24px, popover 22px, well row 20px, term row 16px, tile and icon chip 14px, checkbox 8px. Icon chips are pastel squares at the 14px radius. Card outlines are 1.5px ink; inner wells carry a transparent 1.5px border that turns ink on hover so nothing shifts. Dashed lines mean "possible" or "drop here": the goal marker, its stem, and the upload zone.
 
 ## Components
 
@@ -339,7 +339,7 @@ A full-width yellow card with an ink outline, a 68px ink "days left" block with 
 
 The app was simplified with dub.co as the reference for restraint. The ledger personality stays: paper, Bricolage numerals, highlighter yellow, category pastels and the blue action field. The noise is gone.
 
-- **One job per page.** Overview: multiplier, top three actions, would-your-policies-pay. Risk: category list and detail, with the trend chart under the list. Policies: cards only; upload lives in a drawer behind "Add a policy". Coverage & quotes: ranked gaps, each linking straight into the quote flow (the separate catalog page and the /shop index are gone; /shop redirects to /coverage). What-if: scenario pills, result and ledger. Learn: three cream guide cards and the glossary.
+- **One job per page.** Overview: multiplier, top three actions, would-your-policies-pay. Risk: category list and detail, with the trend chart under the list. Policies: cards only; upload lives in a drawer behind "Add a policy". Coverage & quotes: ranked gaps, each linking straight into the quote flow (the separate catalog page and the /shop index are gone; /shop redirects to /coverage). Learn: three cream guide cards and the glossary.
 - **Shell.** The black sidebar slab is retired. The sidebar sits flush on paper: brand, a search pill (⌘K), six nav pills (active is the yellow highlighter), a one-line neutral-advisor note with a pink dot, and the account/demo-business switcher at the foot (menu opens upward). Content sits in one `surface` panel (26px radius, 1px border). The top bar, the persona toggle and the notification bell are gone. On phones the panel dissolves and cards sit directly on paper.
 - **Lines.** Cards and outer controls use a 1px `border` at rest and `border-strong` on hover. The 1.5px ink outline is reserved for checkboxes and pressed states. This supersedes "1.5px ink outlines on every card" above.
 - **Type scale.** Page titles are clamp(30px, 3vw, 40px); card titles 21px. The hero multiplier keeps its display size, so it is the only loud number on a page.
