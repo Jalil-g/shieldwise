@@ -32,9 +32,8 @@ Owners check in occasionally: at renewal, after something changes (new hires, ne
 - Risk profile by category, with drivers (why) and actions that lower exposure.
 - Policy hub: store policies, read limits, deductibles, sublimits and exclusions in plain English, plus renewal dates.
 - Coverage recommender driven by gaps, and side-by-side policy comparison (sample quotes).
-- Scenario simulator: what policies pay versus what the owner pays.
 - Learn: plain-English guides and a glossary matched to the policies the owner holds.
-- Not built: claims filing, AI chat, real carrier integrations, auth.
+- Not built: a what-if scenario simulator (removed 2026-11-11), claims filing, AI chat, real carrier integrations, auth.
 
 ## Brand Commitments
 

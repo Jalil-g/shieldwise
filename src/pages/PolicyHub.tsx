@@ -334,8 +334,8 @@ function PolicyDetail({p, onClose}: {p: Policy; onClose: () => void}) {
             Compare {shop.quotes.length} providers
           </Link>
         ) : (
-          <Link to="/simulator" className="btn">
-            Test it in a what-if
+          <Link to="/coverage" className="btn">
+            See coverage gaps
           </Link>
         )}
         <button className="btn ghost" onClick={() => toast({body: 'In the full product this downloads the original PDF.', uniqueID: 'dl'})}>

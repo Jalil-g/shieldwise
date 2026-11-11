@@ -25,7 +25,6 @@ npm run build     # static output in dist/, deployable to GitHub Pages (hash rou
 | `#/coverage` | Gaps ranked by dollars at risk, where you're already fine, and links to compare providers for each gap. |
 | `#/shop` | Redirects to `#/coverage`, where each gap links straight into its quote comparison. |
 | `#/shop/:product` | Provider comparison: configure limits, deductibles and must-haves, sort sample quotes, compare up to three providers, and save a demo quote request to Policies. |
-| `#/simulator/:id` | What-if scenarios. Shows the line-by-line payout (limits, sublimits, deductibles) and a "with the recommended option" replay. |
 | `#/learn` | Guides matched to your policies and a glossary with "for you" notes. |
 
 Press **⌘K** to search everything. Use the avatar menu to switch between the demo businesses (Northwind Labs, a SaaS company, and Saffron & Salt, a restaurant), change the theme, or restart the demo.

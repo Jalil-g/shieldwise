@@ -76,36 +76,6 @@ export interface Gap {
   compareId?: string;
 }
 
-export interface CostLine {
-  label: string;
-  /** Cost at minor / typical / severe */
-  cost: [number, number, number];
-  /** Policy id that responds, or null if nothing does. */
-  policy: string | null;
-  /** Optional sublimit that caps this line. */
-  sublimit?: number;
-  /** Alternative policy setup from a compare option: option id -> {policy limit override or sublimit} */
-  note?: string;
-}
-
-export interface Scenario {
-  id: string;
-  name: string;
-  icon: IconName;
-  tone: Tone;
-  blurb: string;
-  lines: CostLine[];
-  /** How this scenario would play out with the recommended fix in place. */
-  alt?: {
-    label: string;
-    /** Policy terms in the alternative world, keyed by policy id (may introduce new ids). */
-    policies: Record<string, {name: string; limit: number; deductible: number}>;
-    /** Per-line overrides keyed by line label. */
-    lines?: Record<string, {policy?: string | null; sublimit?: number | null}>;
-  };
-  takeaway: string;
-}
-
 export interface Guide {
   id: string;
   title: string;
@@ -145,7 +115,6 @@ export interface Persona {
   actions: RiskAction[];
   policies: Policy[];
   gaps: Gap[];
-  scenarios: Scenario[];
   guides: Guide[];
   glossary: GlossaryTerm[];
   trend: TrendPoint[];
